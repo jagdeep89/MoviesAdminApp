@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://moviessoap.mycompany.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://moviessoap.mycompany.com/">
+
+<xs:element name="addMovie" type="tns:addMovie"/>
+
+<xs:element name="addMovieResponse" type="tns:addMovieResponse"/>
+
+<xs:element name="deleteMovie" type="tns:deleteMovie"/>
+
+<xs:element name="deleteMovieResponse" type="tns:deleteMovieResponse"/>
+
+<xs:element name="getAllMovies" type="tns:getAllMovies"/>
+
+<xs:element name="getAllMoviesResponse" type="tns:getAllMoviesResponse"/>
+
+<xs:element name="getMovie" type="tns:getMovie"/>
+
+<xs:element name="getMovieResponse" type="tns:getMovieResponse"/>
+
+<xs:element name="updateMovie" type="tns:updateMovie"/>
+
+<xs:element name="updateMovieResponse" type="tns:updateMovieResponse"/>
+
+<xs:complexType name="addMovie">
+<xs:sequence>
+<xs:element name="Movie" type="tns:MovieType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MovieType">
+<xs:sequence>
+<xs:element name="IdContent" type="xs:int"/>
+<xs:element name="IDCollection" type="xs:int"/>
+<xs:element name="Title" type="xs:string"/>
+<xs:element name="Plot" type="xs:string"/>
+<xs:element name="Released" type="xs:string"/>
+<xs:element name="ContentRating" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addMovieResponse">
+<xs:sequence>
+<xs:element name="ResponseMessage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllMovies">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllMoviesResponse">
+<xs:sequence>
+<xs:element name="Movies" type="tns:MoviesType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MoviesType">
+<xs:sequence>
+<xs:element name="Movie" type="tns:MovieType" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMovie">
+<xs:sequence>
+<xs:element name="MovieName" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMovieResponse">
+<xs:sequence>
+<xs:element name="Movie" type="tns:MovieType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateMovie">
+<xs:sequence>
+<xs:element name="arg0" type="tns:MovieType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateMovieResponse">
+<xs:sequence>
+<xs:element name="ResponseMessage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteMovie">
+<xs:sequence>
+<xs:element name="MovieID" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteMovieResponse">
+<xs:sequence>
+<xs:element name="ResponseMessage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

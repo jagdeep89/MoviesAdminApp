@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <link rel="stylesheet" href="/webjars/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <script src="/webjars/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="/">Spring Boot - SOAP Client </a>
+        </div>
+
+    </div>
+</nav>
+<div class="container">
+
+    <div class="starter-template">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Get Movie By Id</h3>
+            </div>
+            <div class="panel-body">
+
+                <form action="/getMovie" method="post">
+                    <b>WebService WSDL Address : </b><a href="http://localhost:8080/MoviesSoap/MoviesWebServiceService?wsdl">http://localhost:8080/MoviesSoap/MoviesWebServiceService?wsdl</a> <br/><br/>
+                    Movie ID : <input type="text" name="idContent" class="form-control"/><br/>
+                    <input type="submit" value="Search" class="btn btn-primary"/><br/>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </body>
+</html>
